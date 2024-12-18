@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Protection Objectives</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+            text-align: justify;
+            font-size: larger;
+            font-weight: 525;
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            color: #800000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 30px;
+        }
+
+        .home-icon:hover {
+            color: #f2e6e6;
+            transform: scale(1.2);
+        }
+
+        /* Hero Section */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 300px;
+            padding: 0 20px;
+            color: #800000;
+        }
+
+        .hero-text {
+            flex: 1;
+            margin: 120px 30px 0 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.7rem;
+            font-weight: bold;
+            font-family: garamond;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        .hero-divider {
+            border: none;
+            height: 6px;
+            border-radius: 20px;
+            background-color: #800000;
+            width: 90px;
+            margin: 10px 0;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 40px;
+        }
+
+        .about, .services {
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            padding: 40px 20px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #800000;
+            font-family: garamond;
+            text-align: center;
+        }
+
+        #objectives h2:nth-of-type(2) {
+            border-top: 2px solid #800000;
+            padding-top: 40px;
+            margin-top: 20px;
+        }
+
+        /* Objectives */
+        .objectives-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .objective {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .objective:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .objective-images {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+
+        .objective-images img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .objective-images img:nth-child(2) {
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .objective-images img:nth-child(1) {
+            z-index: 2;
+        }
+
+        .objective-text {
+            max-width: calc(100% - 300px);
+        }
+
+        .objective-text p {
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .objective-text p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #800000;
+        }
+
+        .quoted-objective {
+            background-color: #fff;
+            border-left: 5px solid #800000;
+            padding: 15px;
+            margin: 40px 10px 0;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #000;
+        }
+
+        .quoted-objective strong {
+            color: #800000;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #800000;
+            color: #fff;
+            padding: 10px 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d9b3b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <a href="aboutus.html" class="home-icon">&#8962;</a>
+
+        <div class="hero-text">
+            <h1>5.</h1>
+            <h1>Social Protection</h1>
+            <hr class="hero-divider">
+        </div>
+
+        <div class="hero-image">
+            <img src="https://i.postimg.cc/Jn3vdXQx/obj55.png" alt="Hero Section Image">
+        </div>
+    </header>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="services">
+        <h2>Overview</h2>
+        <p>This objective is all about making sure women’s social needs, safety, and well-being are met. It focuses on changing societal attitudes, improving national policies, and working with civil society to support women, especially those who are disadvantaged. It also emphasizes the importance of family unity and non-discrimination within the family.</p>
+
+        <h2>Sub-Objectives</h2>
+        <div class="objectives-container">
+            <!-- First Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/ncmwh555/pexels-cedric-fauntleroy-8154682.jpg" alt="Objective 1 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 1 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Providing legal protection for women against all forms of violence and discrimination.</p>
+                    <p>Establishing support services for women who are victims of violence and discrimination.</p>
+                </div>
+            </div>
+
+            <!-- Second Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/0y8d1Bq7/pexels-edmond-dantes-8068144.jpg" alt="Objective 2 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 2 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Raising public awareness on the importance of protecting women from violence and discrimination.</p>
+                    <p>Promoting the role of women in society and their contribution to the development of their communities and families by taking the necessary institutional steps.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quoted-objective">
+            <p><strong>Quoted Objective:</strong> Social protection: improving and ensuring women’s social needs, safety, and well-being.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+            <ul class="footer-links">
+                <li><a href="meettheteam.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

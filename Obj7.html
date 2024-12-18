@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objective7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+            text-align: justify;
+            font-size: larger;
+            font-weight: 525;
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            color: #800000;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            margin-left: 30px;
+        }
+
+        .home-icon:hover {
+            color: #f2e6e6;
+            transform: scale(1.2);
+        }
+
+        /* Hero Section */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 300px;
+            padding: 0 20px;
+            background-color: #ffffff;
+            color: #800000;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-left: 20px;
+            margin-left: 30px;
+            margin-top: 120px;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 3.7rem;
+            font-weight: bold;
+            font-family: garamond;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 90px;
+        }
+
+        .hero-image img {
+            max-width: 250%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #800000;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0px;
+            text-align: left;
+        }
+
+        .about, .services, .blog, .objective-quote {
+            background: #fff;
+            margin: 20px 40px;
+            border-radius: 8px;
+            padding: 40px 20px;
+        }
+
+        .about h2, .services h2, .blog h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #800000;
+            font-family: garamond;
+            text-align: center;
+        }
+
+        /* Objectives Section */
+        .objectives-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .objective {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .objective:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .objective.photo-left {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .objective.photo-right {
+           flex-direction: row; /* Reverse the default direction */
+         text-align: left; /* Align text properly for better readability */
+        }  
+
+
+        .objective-images {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .objective-images img:nth-child(1) {
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .objective-images img:nth-child(2) {
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .objective-images img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .objective-text {
+            max-width: calc(100% - 300px);
+            text-align: justify;
+        }
+
+        .objective-text p {
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .objective-text p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #800000;
+            background-color: #800000;
+        }
+        /* Styling for sub-bullets */
+.objective-text ul {
+    padding-left: 30px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.objective-text ul li {
+    display: flex; /* Align items on the same line */
+    justify-content: flex-start;
+    gap: 20px; /* Add space between the two items */
+    margin-bottom: 10px;
+}
+
+.objective-text ul li span {
+    flex: 1; /* Distribute space equally */
+    display: inline-block;
+    line-height: 1.6;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Optional styling for bullet-like look */
+.objective-text ul li::before {
+    content: '•'; /* Use a bullet character */
+    margin-right: 10px;
+    color: #800000;
+}
+
+        .outer-box {
+            background-color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .inner-box {
+            background-color: #f2e6e6;
+            margin: 0 auto;
+            max-width: 90%;
+            width: 900px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #000000;
+            font-size: 1rem;
+        }
+
+        .quoted-objective {
+            background-color: #fff;
+            border-left: 5px solid #800000;
+            padding: 15px;
+            margin: 40px 10px 0 10px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #000000;
+        }
+
+        .quoted-objective strong {
+            color: #800000;
+        }
+
+        .hero-divider {
+            border: none;
+            height: 6px;
+            border-radius: 20px;
+            background-color: #800000;
+            width: 90px;
+            margin: 10px 0;
+        }
+
+        #objectives h2:nth-of-type(2) {
+            border-top: 2px solid #800000;
+            padding-top: 40px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #800000;
+            color: #fff;
+            padding: 10px 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links li {
+            display: inline;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d9b3b3;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <a href="aboutus.html" class="home-icon">&#8962;</a>
+
+        <div class="hero-text">
+            <h1>7.</h1>
+            <h1>Women in Crisis Situations</h1>
+            <hr class="hero-divider">
+        </div>
+        <div class="hero-image">
+            <img src="https://i.postimg.cc/GmMTXkrJ/Untitled-design.png" alt="Hero Section Image">
+        </div>
+    </header>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="services">
+        <h2>Overview</h2>
+        <p>This objective ensures that women and girls get the protection and humanitarian aid they need during conflicts, natural disasters, and other crises. It highlights the importance of involving women in conflict resolution and peacebuilding. The goal is to make sure women are safe and have access to essential services during tough times. </p>
+
+        <h2>Sub-Objectives</h2>
+        <div class="objectives-container">
+            <!-- First Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/Y9KZ0tXs/pexels-ahmed-akacha-3313934-6918512.jpg" alt="Objective 1 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 1 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Ensuring gender-based response to women and girl refugees, migrants, displaced by armed conflict and foreign occupation, and facilitating their access to humanitarian safe zones, food shelter, education and healthcare in times of crisis.  </p>
+                    <p>Taking special measures to protect women and girls from different forms of gender-based violence and sexual abuse, in armed conflict and post-conflict situations, providing necessary assistance to victims and fighting the impunity of perpetrators.  </p>
+                </div>
+                
+            </div>
+
+            <!-- Second Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/NMjNW8rs/pexels-soner-arkan-277045183-28916477.jpg" alt="Objective 2 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 2 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Supporting the role of women and women's civil society organizations in the promotion of peaceful and inclusive societies through reconciliation, interfaith and intercultural dialogues among parties of the conflict.  </p>
+                    <p>Ensuring women’s participation in all steps of peace processes, including negotiation, crisis management and ending the conflict.   </p>
+                 </div>
+            </div>
+
+            <!-- Third Objective -->
+            <div class="objective photo-left">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/CL3Qzf97/pexels-ahmed-akacha-3313934-10629440.jpg" alt="Objective 3 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 3 Image 2">
+                </div>
+                <div class="objective-text">
+                  <p>Encouraging the media to actively report on matters related to different forms of violence against women and girls, and also their conditions in the situation of wars and armed conflicts to sensitize the society at local, national and international levels.</p>
+                  <p>Promoting the international cooperation in combating the violence against women and girls in armed conflicts.</p>  
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="outer-box">
+            <blockquote class="quoted-objective">
+                <p><strong>Quoted Objective:</strong> : Women in Crisis Situations: Ensuring women’s and girls’ protection and access to humanitarian assistance during armed conflict, natural and man-made disaster, foreign occupation, forced displacement and other vulnerable situations; particularly, rural women. OIC Member States will also promote the role of women in conflict resolution, peace and security pursuant to Security Council resolution 1325.  </p> 
+            </blockquote>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+            <ul class="footer-links">
+                <li><a href="meettheteam.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objective2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+            text-align: justify;
+            font-size: larger;
+            font-weight: 525;
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            color: #800000;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            margin-left: 30px;
+        }
+
+        .home-icon:hover {
+            color: #f2e6e6;
+            transform: scale(1.2);
+        }
+
+        /* Hero Section */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 300px;
+            padding: 0 20px;
+            background-color: #ffffff;
+            color: #800000;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-left: 20px;
+            margin-left: 30px;
+            margin-top: 120px;
+            text-align: left;
+            
+        }
+
+        .hero-text h1 {
+            font-size: 3.7rem;
+            font-weight: bold;
+            font-family: garamond;
+            
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 90px;
+        }
+
+        .hero-image img {
+            max-width: 250%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #800000;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0px;
+            text-align: left;
+        }
+
+        .about, .services, .blog, .objective-quote {
+            background: #fff;
+            margin: 20px 40px;
+            border-radius: 8px;
+            padding: 40px 20px;
+        }
+
+        .about h2, .services h2, .blog h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #800000;
+            font-family: garamond;
+            text-align: center;
+        }
+
+        /* Objectives Section */
+        .objectives-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .objective {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .objective:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .objective.photo-left {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .objective.photo-right {
+           flex-direction: row; /* Reverse the default direction */
+         text-align: left; /* Align text properly for better readability */
+        }  
+
+
+        .objective-images {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .objective-images img:nth-child(1) {
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .objective-images img:nth-child(2) {
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .objective-images img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .objective-text {
+            max-width: calc(100% - 300px);
+            text-align: justify;
+        }
+
+        .objective-text p {
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .objective-text p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #800000;
+            background-color: #800000;
+        }
+        /* Styling for sub-bullets */
+.objective-text ul {
+    padding-left: 30px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.objective-text ul li {
+    display: flex; /* Align items on the same line */
+    justify-content: flex-start;
+    gap: 20px; /* Add space between the two items */
+    margin-bottom: 10px;
+}
+
+.objective-text ul li span {
+    flex: 1; /* Distribute space equally */
+    display: inline-block;
+    line-height: 1.6;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Optional styling for bullet-like look */
+.objective-text ul li::before {
+    content: '•'; /* Use a bullet character */
+    margin-right: 10px;
+    color: #800000;
+}
+
+        .outer-box {
+            background-color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .inner-box {
+            background-color: #f2e6e6;
+            margin: 0 auto;
+            max-width: 90%;
+            width: 900px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #000000;
+            font-size: 1rem;
+        }
+
+        .quoted-objective {
+            background-color: #fff;
+            border-left: 5px solid #800000;
+            padding: 15px;
+            margin: 40px 10px 0 10px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #000000;
+        }
+
+        .quoted-objective strong {
+            color: #800000;
+        }
+
+        .hero-divider {
+            border: none;
+            height: 6px;
+            border-radius: 20px;
+            background-color: #800000;
+            width: 90px;
+            margin: 10px 0;
+        }
+
+        #objectives h2:nth-of-type(2) {
+            border-top: 2px solid #800000;
+            padding-top: 40px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #800000;
+            color: #fff;
+            padding: 10px 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links li {
+            display: inline;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d9b3b3;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <a href="aboutus.html" class="home-icon">&#8962;</a>
+
+        <div class="hero-text">
+            <h1>6.</h1>
+            <h1>Protection of Women from Violence</h1>
+            <hr class="hero-divider">
+        </div>
+        <div class="hero-image">
+            <img src="https://i.postimg.cc/KvSzf0Ty/Untitled-design.png" alt="Hero Section Image">
+        </div>
+    </header>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="services">
+        <h2>Overview</h2>
+        <p>This one is about fighting all forms of violence against women and girls, including human trafficking and harmful traditional practices. It calls for preventive measures, support for victims, and punishment for perpetrators. It also stresses the need for national policies and international cooperation to protect women from violence.  </p>
+
+        <h2>Sub-Objectives</h2>
+        <div class="objectives-container">
+            <!-- First Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/GmRxWPZW/pexels-rdne-8069757.jpg" alt="Objective 1 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 1 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Implementing legal reforms to protect women from violence.</p>
+                    <p>Establishing support services for women who are victims of violence. </p>
+                </div>
+                
+            </div>
+
+            <!-- Second Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/1XMpkKnK/pexels-ihsanaditya-23585564-1.jpg" alt="Objective 2 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 2 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Raising public awareness on the importance of protecting women from violence.  </p>
+                    <p>Promoting the role of women in society and their contribution to the development of their communities and families by taking the necessary institutional steps</p>
+                </div>
+            </div>
+
+         
+        
+        <div class="outer-box">
+            <blockquote class="quoted-objective">
+                <p><strong>Quoted Objective:</strong>  Protection of Women from Violence: Combating all forms of gender-based violence, human trafficking and other harmful traditional practices against women and girls. Combating different forms of violence against women and girls including deprivation of opportunities and full enjoyment of their rights through preventive measures and provisions of rehabilitation to victims and punishment of perpetrators.  </p> 
+            </blockquote>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+            <ul class="footer-links">
+                <li><a href="meettheteam.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objective8</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+            text-align: justify;
+            font-size: larger;
+            font-weight: 525;
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            color: #800000;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            margin-left: 30px;
+        }
+
+        .home-icon:hover {
+            color: #f2e6e6;
+            transform: scale(1.2);
+        }
+
+        /* Hero Section */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 300px;
+            padding: 0 20px;
+            background-color: #ffffff;
+            color: #800000;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-left: 20px;
+            margin-left: 30px;
+            margin-top: 120px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.7rem;
+            font-weight: bold;
+            font-family: garamond;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 90px;
+        }
+
+        .hero-image img {
+            max-width: 250%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #800000;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0px;
+            text-align: left;
+        }
+
+        .about, .services, .blog, .objective-quote {
+            background: #fff;
+            margin: 20px 40px;
+            border-radius: 8px;
+            padding: 40px 20px;
+        }
+
+        .about h2, .services h2, .blog h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #800000;
+            font-family: garamond;
+            text-align: center;
+        }
+
+        /* Objectives Section */
+        .objectives-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .objective {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .objective:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .objective.photo-left {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .objective.photo-right {
+           flex-direction: row; /* Reverse the default direction */
+         text-align: left; /* Align text properly for better readability */
+        }  
+
+
+        .objective-images {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .objective-images img:nth-child(1) {
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .objective-images img:nth-child(2) {
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .objective-images img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .objective-text {
+            max-width: calc(100% - 300px);
+            text-align: justify;
+        }
+
+        .objective-text p {
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .objective-text p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #800000;
+            background-color: #800000;
+        }
+        /* Styling for sub-bullets */
+.objective-text ul {
+    padding-left: 30px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.objective-text ul li {
+    display: flex; /* Align items on the same line */
+    justify-content: flex-start;
+    gap: 20px; /* Add space between the two items */
+    margin-bottom: 10px;
+}
+
+.objective-text ul li span {
+    flex: 1; /* Distribute space equally */
+    display: inline-block;
+    line-height: 1.6;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Optional styling for bullet-like look */
+.objective-text ul li::before {
+    content: '•'; /* Use a bullet character */
+    margin-right: 10px;
+    color: #800000;
+}
+
+        .outer-box {
+            background-color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .inner-box {
+            background-color: #f2e6e6;
+            margin: 0 auto;
+            max-width: 90%;
+            width: 900px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #000000;
+            font-size: 1rem;
+        }
+
+        .quoted-objective {
+            background-color: #fff;
+            border-left: 5px solid #800000;
+            padding: 15px;
+            margin: 40px 10px 0 10px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #000000;
+        }
+
+        .quoted-objective strong {
+            color: #800000;
+        }
+
+        .hero-divider {
+            border: none;
+            height: 6px;
+            border-radius: 20px;
+            background-color: #800000;
+            width: 90px;
+            margin: 10px 0;
+        }
+
+        #objectives h2:nth-of-type(2) {
+            border-top: 2px solid #800000;
+            padding-top: 40px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #800000;
+            color: #fff;
+            padding: 10px 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links li {
+            display: inline;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d9b3b3;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <a href="aboutus.html" class="home-icon">&#8962;</a>
+
+        <div class="hero-text">
+            <h1>8.</h1>
+            <h1> Women in Disasters</h1>
+            <hr class="hero-divider">
+        </div>
+        <div class="hero-image">
+            <img src="https://i.postimg.cc/xT1zhM06/Untitled-design.png" alt="Hero Section Image">
+        </div>
+    </header>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="services">
+        <h2>Overview</h2>
+        <p>This one focuses on helping women during natural disasters, especially in rural areas. It calls for enhancing the capacity of institutions to prevent violence against women and ensuring women have access to safe zones, food, shelter, education, and healthcare. It also emphasizes the role of women in planning and responding to disasters. </p>
+
+        <h2>Sub-Objectives</h2>
+        <div class="objectives-container">
+            <!-- First Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/bYW7tv56/pexels-mikhail-nilov-7731330-1.jpg" alt="Objective 1 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 1 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Enhancing capacities of governmental institutions and civil society organisations to prevent violence against women at the local, national and regional level.  </p>
+                    <p>Engaging with women’s civil society organisations in order to promote their effective empowerment to ensure access to their basic human rights.  </p>
+
+                </div>
+                
+            </div>
+
+            <!-- Second Objective -->
+            <div class="objective">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/Y0sYbCmr/pexels-cottonbro-5119924.jpg" alt="Objective 2 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 2 Image 2">
+                </div>
+                <div class="objective-text">
+                    <p>Ensuring gender-based response to women and girl refugees, migrants, displaced, including those under foreign occupation, and facilitating their access to humanitarian safe zones, food, shelter, education, and healthcare in times of crisis.  </p>
+                    <p>Integrating sexual violence responses, including girl-child violence, in all humanitarian policies and strategies to prevent such violence, provide necessary assistance to victims and fight the impunity of perpetrators.  </p>
+                </div>
+            </div>
+
+            <!-- Third Objective -->
+            <div class="objective photo-left">
+                <div class="objective-images">
+                    <img src="https://i.postimg.cc/RZ9wsc8N/pexels-cottonbro-7805046.jpg" alt="Objective 3 Image 1">
+                    <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 3 Image 2">
+                </div>
+                <div class="objective-text">
+                    <P>Facilitating women's full participation in the definition of a humanitarian response to natural disasters and crisis (assessment analysis and planning and implementation), and also in humanitarian actions, through national entities, civil society and/or community-based organisations.  </P>
+                    <P>Enhancing the role of religious leaders in the prevention of violence against women and girls.  </P>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth Objective -->
+        <div class="objective photo-right">
+            <div class="objective-text">
+               <P>Engaging men and boys in all steps of elimination of different forms of violence against women and girls.  </P>
+               <P>Mobilising media and other communicative tools to combat violence against women and girls through the awareness-raising and sensitisation of society. </P>
+            </div>
+            <div class="objective-images">
+                <img src="https://i.postimg.cc/wT6ssP3f/pexels-gabby-k-6281919.jpg " alt="Objective 4 Image 1">
+                <img src="https://i.postimg.cc/Kjcb6VMk/Untitled-design1.png" alt="Objective 4 Image 2">
+            </div>
+        </div>
+        
+        <div class="outer-box">
+            <blockquote class="quoted-objective">
+                <p><strong>Quoted Objective:</strong> Women in Disasters: Providing humanitarian assistance for women and protecting them during natural disasters, particularly in rural areas.  </p> 
+            </blockquote>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+            <ul class="footer-links">
+                <li><a href="meettheteam.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
