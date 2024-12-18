@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Justice Movement</title>
+<style>
+   /* Reset styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+            font-family: 'Garamond', serif;
+        }
+
+        .header {
+            background-color: #fff;
+            height: 200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #800000;
+            align-content: center;
+        }
+
+        .navbar-container {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            background: #800000;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px 0; /* Vertical padding only */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            margin-bottom: 10px;
+        }
+        .nav-center nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin: 0; /* Remove any margin overrides */
+            padding: 0 30px; /* Optional padding to add internal space */
+        }
+        .nav-center {
+            display: flex;
+            justify-content: center; /* Center the links */
+            align-items: center; /* Align vertically */
+            gap: 40px; /* Space between links */
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-center a:hover::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: white;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content p {
+            font-size: 48px;
+            margin-top: 70px;
+            margin-bottom: 10px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden; /* Ensure slides stay inside the container */
+            display: flex;
+        }
+
+        /* Slide Styles */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+            margin-bottom: 50px ;
+            
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            width: 100%;
+        }
+
+        .slide {
+            flex: 1 0 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            background-size: cover; /* Ensures the image covers the entire slide */
+            background-position: center; /* Centers the image */
+        }
+
+        .slide.light-blue {
+            background-image: url(https://i.postimg.cc/wMcpg1g2/pexels-cottonbro-9881081.jpg);
+        }
+
+        .slide.light-yellow {
+            background-image: url(https://i.postimg.cc/fLgqb3js/3zero.jpg);
+        }
+
+        .slide.sage-green {
+           background-image: url(https://i.postimg.cc/3R2MFk4h/pexels-ron-lach-10347160.jpg);
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero:hover .controls {
+            opacity: 1;
+        }
+
+
+        .niches-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem;
+            align-items: center;
+        }
+
+        .niche-card {
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: #ffffff;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .niche-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #800000;
+            padding: 0 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .niche-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+        }
+
+        .niche-icon {
+            font-size: 2rem;
+            color: #555;
+        }
+
+        .niche-details {
+            text-align: left;
+        }
+
+        .niche-content a {
+            text-decoration: none !important; /* Force remove underline */
+            color: inherit !important; /* Inherit text color */
+            display: block; /* Make entire content clickable */
+            transition: color 0.3s ease; /* Smooth transition effect */
+        }
+
+        .niche-content a:hover,
+        .niche-content a:active {
+            color: #800000 !important; /* Maroon color on hover or click */
+        }
+
+
+
+
+        .niche-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #333;
+
+        }
+
+        .niche-title h3{
+            font-family: 'Garamond', serif;
+
+        } 
+
+        .niche-description {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+
+        }
+
+        .niche-color {
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .articles {
+          background-color: #f2e6e6;
+          padding: 20px;
+        }
+
+        .articles h2 {
+            font-family: Garamond, serif;
+            font-size: 30px;
+            color: #800000;
+            text-align: center;
+        }
+
+        .articles p {
+          font-size: 16px;
+          color: #555;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .articles p a {
+          color: #d72d1d;
+          text-decoration: underline;
+        }
+
+        .articles-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+
+        .article {
+          background-color: #f9f9f9;
+          padding: 15px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          text-align: center;
+        }
+
+        .article img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+          transition: transform 0.3s ease;
+        }
+
+        .article:hover img {
+          transform: scale(1.05);
+        }
+
+        .article h3 {
+          font-size: 18px;
+          color: #333;
+          margin: 10px 0 5px;
+        }
+
+        .article p {
+          font-size: 14px;
+          color: #666;
+          line-height: 1.5;
+          text-align: center;
+        }
+
+        .article a{
+            color: #800000;
+            text-align: center;
+        }
+
+        .article:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .videos h2 {
+            font-family: Garamond, serif;
+            font-size: 30px;
+            color: #800000;
+            text-align: center;
+        }
+
+        .videos {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* Grid Layout */
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .video-item {
+            flex: 0 0 calc(33.33% - 20px); /* Three items per row */
+            max-width: 300px; /* Adjust as needed */
+            text-align: center;
+            position: relative;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(128, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover img {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px); /* Lift slightly */
+            box-shadow: 0 8px 12px rgba(128, 0, 0, 0.2);
+        }
+
+        .video-item h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .videos a {
+            color: #d72d1d;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #800000; 
+            color: #fff; 
+            padding: 10px 40px;
+            text-align: center; /* Centers the text */
+            margin-top: 0px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center !important;
+        }
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+}
+
+
+</style>
+</head>
+<body>
+
+    <header class="header">
+        <!-- Navigation Box -->
+        <div class="navbar-container">
+            <div class="nav-center">
+                <nav>
+                    <a href="aboutus.html">Women Advancement</a>
+                    <a href="https://aiu.edu.my/aiu-social-business/">Social Business & Social Innovation</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="videos.html">Videos</a>
+                    <a href="meettheteam.html">Meet the Team</a>
+                </nav>
+            </div>
+        </div>
+        <div class="header-content">
+            <p>Social Justice Movement</p>
+        </div>
+    </header>
+
+
+    <div class="hero">
+        <div class="slides">
+            <div class="slide light-blue"></div>
+            <div class="slide light-yellow"></div>
+            <div class="slide sage-green"></div>
+        </div>
+        <div class="controls">
+            <button class="control prev">&#10094;</button>
+            <button class="control next">&#10095;</button>
+        </div>
+    </div>
+
+
+    <div style="text-align: center; margin: 20px 0;">
+        <hr style="border: 2.2px solid #800000; width: 50%; margin: auto; border-radius: 2px;">
+    </div>
+    <section class="niches-section">
+        <div class="niche-card">
+            <div class="niche-number">01</div>
+            <div class="niche-content">
+                <a href="aboutus.html" class="niche-details">
+                    <h3 class="niche-title">The Advancement of Women Through</h3>
+                    <p class="niche-description">
+                        OIC Plan of Action for the Advancement of Women (OPAAW)
+                    </p>
+                </a>
+            </div>
+            <div class="niche-color" style="background-color: #800000;"></div>
+        </div>
+
+        <div class="niche-card">
+            <div class="niche-number">02</div>
+            <div class="niche-content">
+                <a href="https://aiu.edu.my/aiu-social-business/" class="niche-details">
+                <div class="niche-details">
+                    <h3 class="niche-title">Empowering People Experiencing Disadvantage Through</h3>
+                    <p class="niche-description">
+                        Social Business and Social Innovation
+                    </p>
+                </a>
+                </div>
+            </div>
+            <div class="niche-color" style="background-color: #fbc02d;"></div>
+        </div>
+    </section>
+
+    <section id="articles" class="articles">
+        <h2>Articles & News</h2>
+        <p>Read the latest news and articles of our community. <a href="articles.html">Read all</a></p>
+        <div class="articles-grid">
+          <div class="article">
+            <img src="https://i.postimg.cc/zB9LV4t2/Whats-App-Image-2024-12-12-at-00-01-50-67225595.jpg">
+            <h3>Research: Women Are Better Leaders During a Crisis</h3>
+            <p>One study found that outcomes related to Covid-19, including number of cases and deaths, were systematically better in countries led by women.</p>
+            <a href="https://hbr.org/2020/12/research-women-are-better-leaders-during-a-crisis" target="_blank" class="article-link">Read More</a>
+          </div>
+          <div class="article">
+            <img src="https://i.postimg.cc/MGfmrRkP/Whats-App-Image-2024-12-12-at-00-11-07-4973ba7a.jpg">
+            <h3>War on women - Proportion of women killed in armed conflicts doubled in 2023</h3>
+            <p>In 2023, the proportion of women killed in armed conflicts doubled compared to 2022. Four out of every ten people who died as a result of conflit in 2023 were...</p>
+            <a href="https://www.unwomen.org/en/news-stories/press-release/2024/10/war-on-women-women-killed-in-armed-conflicts-double-in-2023" target="_blank" class="article-link">Read More</a>
+          </div>
+          <div class="article">
+            <img src="https://i.postimg.cc/HnXr53FY/Whats-App-Image-2024-12-12-at-00-05-43-cf260da2.jpg">
+            <h3>'Our strength is all we have left' - Generations of Palestinian women and girls endure war and displacement</h3>
+            <p>This war has irreversibly changed my life. We have been displaced repeatedly, losing my education, my friends. The fear we live with is beyond words."</p>
+            <a href="https://www.unwomen.org/en/news-stories/feature-story/2024/11/our-strength-is-all-we-have-left-generations-of-palestinian-women-and-girls-endure-war-and-displacement" target="_blank" class="article-link">Read More</a>
+          </div>
+        </div>
+      </section>
+      <div style="text-align: center; margin: 20px 0;">
+        <hr style="border: 2.2px solid #800000; width: 50%; margin: auto; border-radius: 2px;">
+    </div>
+
+    <section id="videos" class="videos"> 
+        <h2>Videos</h2>
+        <p>Explore our latest videos. Click to watch on YouTube.</p>
+        <a href="videos.html">Explore More</a>
+        <div class="video-grid">
+            <div class="video-item">
+                <a href="https://youtu.be/o95Mt48xVgM" target="_blank">
+                    <img src="https://img.youtube.com/vi/o95Mt48xVgM/hqdefault.jpg" alt="Video 1 Thumbnail">
+                </a>
+                <h3>What Women in Afghanistan want you to know!</h3>
+            </div>
+            <div class="video-item">
+                <a href="https://youtu.be/LUaXU2g_RHY?si=YArtJLwy9gitkyUb" target="_blank">
+                    <img src="https://img.youtube.com/vi/LUaXU2g_RHY/hqdefault.jpg" alt="Video 2 Thumbnail">
+                </a>
+                <h3>About 60,000 women serve in Ukraine's armed forces</h3>
+            </div>
+            <div class="video-item">
+                <a href="https://youtu.be/9nML0_zS2Co" target="_blank">
+                    <img src="https://img.youtube.com/vi/9nML0_zS2Co/hqdefault.jpg" alt="Video 3 Thumbnail">
+                </a>
+                <h3>Supreme Court Urges Caution In Dowry Harassment Cases To Prevent Misuse Of Law</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us" style="background-color: #f2e6e6; padding: 30px 0; margin-bottom: 0;">
+        <div class="container" style="text-align: center; max-width: 1200px; margin: 0 auto;">
+          <h2 style="font-size: 1.5rem; margin: 10px; font-family: 'Garamond', serif; color:#800000; margin-bottom: 20px;">Contact Us</h2>
+          
+          <!-- Contact Emails -->
+          <div style="margin-bottom: 20px;">
+            <p style="font-size: 1.1rem; margin: 10px; font-family: 'Times New Roman', serif; color:#800000">
+            <strong>Management Team:</strong>
+              <a href="mailto:management@example.com" style="color: #333; text-decoration: none;">
+                management@example.com
+              </a>
+            </p>
+            <p style="font-size: 1.1rem; margin: 10px; font-family: 'Times New Roman', serif; color:#800000; margin-top: 20px;">
+              <strong>IT Support Team:</strong>
+              <a href="mailto:itsupport@example.com" style="color: #333; text-decoration: none;">
+                itsupport@example.com
+              </a>
+            </p>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <a href="https://www.facebook.com/yourpage" target="_blank" style="margin: 0 15px; color: #4267B2; font-size: 2rem;">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/yourpage" target="_blank" style="margin: 0 15px; color: #1DA1F2; font-size: 2rem;">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/yourpage" target="_blank" style="margin: 0 15px; color: #E1306C; font-size: 2rem;">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/yourpage" target="_blank" style="margin: 0 15px; color: #0077B5; font-size: 2rem;">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slide = document.querySelectorAll('.slide');
+        const next = document.querySelector('.next');
+        const prev = document.querySelector('.prev');
+        let currentIndex = 0;
+        const totalSlides = slide.length;
+
+        // Function to update the slide position
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Next slide functionality
+        next.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlidePosition();
+        });
+
+        // Previous slide functionality
+        prev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        });
+
+        // Automatic slide change every 6 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlidePosition();
+        }, 8000);
+
+    </script>
+</body>
