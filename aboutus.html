@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPAAW</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Garamond', serif;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #800000;
+            padding: 15 20px !important;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            box-sizing: border-box;
+            border-bottom: 0.5px solid white;
+            z-index: 10;
+        }
+
+        nav .nav-center {
+            display: flex;
+            gap: 30px;
+            flex-grow: 2;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            position: relative;
+            margin: 20px;
+        }
+
+        .nav-center a:hover::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: white;
+            bottom: -3px;
+            left: 50%; /* Start at the center of the parent */
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .home-icon a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .home-icon:hover a {
+            color:#a64d4d;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+
+        .contact-button a {
+            background-color: white;
+            color: #800000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-button a:hover {
+            background-color: #a64d4d;
+            color: #fff;
+        }
+
+        /* Banner Section */
+        .banner {
+            position: relative;
+            height: 300px;
+            background-color: #800000; /* Solid background color */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 40px;
+        }
+
+        .banner h1 {
+            color: white;
+            font-size: 40px;
+            line-height: 1.5;
+            text-shadow: 0 0 8px rgba(43, 40, 40, 0.5), 
+                         0 0 20px rgba(30, 27, 27, 0.2), 
+                         0 0 30px rgba(54, 49, 49, 0.2);
+        }
+
+        .banner .vertical-block {
+            width: 6px; /* Width of the vertical block */
+            height: 100px; /* Height of the vertical block */
+            background-color: white; /* Block color */
+            border-radius: 2px; /* Optional: rounded edges */
+        }
+
+        .banner .content {
+            display: flex;
+            align-items: center; /* Align text and block vertically */
+            gap: 20px; /* Add space between the block and the text */
+        }
+
+
+
+
+        /* Intro Section */
+        .intro {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #800000;
+        }
+
+        .intro p {
+            text-align: justify;
+            margin: 0 auto;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Card Section */
+        .make-difference {
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            margin-top: 10px;
+        }
+
+        .make-difference h2 {
+            color: #800000;
+        }
+
+        .make-difference1 {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .make-difference1 h2 {
+            color: #800000;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(128, 0, 0, 0.5);
+            text-align: center;
+            width: 14%;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .card h3 {
+            color: #800000;
+        }
+
+        .card:hover {
+            background: #800000; 
+            color: #fff; 
+            box-shadow: 0 6px 12px rgba(128, 0, 0, 0.7);
+            transform: translateY(-10px);
+        }
+
+        .card-container .card {
+            text-decoration: none; /* Removes underline */
+            color: inherit; /* Ensures the text color is inherited */
+            display: block; /* Makes the entire card clickable */
+            transition: transform 0.3s, box-shadow 0.3s; /* Adds smooth hover effect */
+        }
+
+        .card-container .card:hover {
+            cursor: pointer;
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+        }
+
+
+        .card i {
+            font-size: 35px; /* Reduced size */
+            color: #800000 !important;
+        }
+
+        .card:hover i, .card:hover p, .card:hover h3 {
+            color: #fff !important;
+        }
+
+        .footer {
+            background-color: #800000; 
+            color: #fff; 
+            padding: 10px 40px;
+            text-align: center; /* Centers the text */
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center !important;
+        }
+
+       
+        .card p{
+            color:#333;
+        }
+
+        
+
+        .card i{
+            color:#993333 !important;
+        }
+
+        .card:hover p {
+            color: #fff; /* Text turns white */
+        }
+
+        .card img {
+            margin-bottom: 10px;
+        }
+
+
+        .image-text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            overflow: visible; /* Ensure shapes don't overflow */
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+
+        .image-text img {
+            max-width: 280px;
+            border-radius: 10px;
+            z-index: 1; /* Keep image above shapes */
+        }
+
+        .image-text .content {
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        .image-text h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+
+        .image-text p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+
+        .make-difference {
+            position: relative;
+            overflow: visible;
+            margin-bottom: 50px;
+        }
+
+        .make-difference1 {
+            position: relative;
+            overflow: visible;
+            margin-bottom: 40px;
+        }
+
+
+
+        button {
+            background-color: #800000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d9b3b3;
+            color: #800000;
+        }
+
+
+        .footer-links li {
+            display: inline;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .card i {
+            font-size: 40px; /* Adjust size as needed */
+            color: #d23232;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="home-icon">
+            <a href="index.html">⌂</a>
+        </div>
+        <div class="nav-center">
+            <a href="#opaw-objectives">OPAAW</a>
+            <a href="https://aiu.edu.my/aiu-social-business/">Social Business & Social Innovation</a>
+            <a href="articles.html">Articles</a>
+            <a href="videos.html">Videos</a>
+        </div>
+        <div class="contact-button">
+            <a href="meettheteam.html">Contact Us</a>
+        </div>
+    </nav>
+    
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="content">
+            <div class="vertical-block"></div>
+            <h1>OIC's Plan of Action<br> for the Advancement of Women<br> (OPAAW)</h1>
+        </div>
+    </section>
+    
+
+    <!-- Paragraph Section -->
+    <section class="intro">
+        <h2>About OPAAW</h2>
+        <p>
+            The Organisation of Islamic Cooperation's (OIC) Plan of Action for the Advancement of Women (OPAAW), adopted in 2008, is aimed at improving the status of women in its 57 member countries by advancing their rights and opportunities. This all-encompassing plan addresses key areas of women’s life outcomes, such as education, healthcare, economic participation, and legal protection.
+        </p>
+    </section>
+
+    <section class="image-text">
+        <img src="https://i.postimg.cc/VNJTHv03/Whats-App-Image-2024-12-17-at-19-05-57-06ccbc0b.jpg">
+        <div class="content">
+            <h2>Overall</h2>
+            <p>
+                OPAAW provides a framework and agreed-upon standard for OIC member countries to protect and improve the status of women where necessary. Crucially, it is entirely consistent with Islamic values and Shariah, as well as aligning with international standards.
+                Member states are encouraged to develop national strategies based on this framework and report their progress regularly. 
+            </p>
+        </div>
+    </section>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <i class="fa-solid fa-circle" style="font-size: 10px; color: #666;"></i>
+        <i class="fa-solid fa-star" style="font-size: 16px; color: #666;"></i>
+        <i class="fa-solid fa-circle" style="font-size: 10px; color: #666;"></i>
+        <i class="fa-solid fa-star" style="font-size: 16px; color: #666;"></i>
+        <i class="fa-solid fa-circle" style="font-size: 10px; color: #666;"></i>
+    </div>
+    
+
+    <!-- Card Section -->
+    <section id="opaw-objectives" class="make-difference">
+        <h2>OPAAW's Objectives</h2>
+        <div class="card-container">
+            <a href="Obj1.html" class="card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Objective 1</h3>
+                <p>Decision-Making Participation</p>
+            </a>
+            <a href="Obj2.html" class="card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Objective 2</h3>
+                <p>Education</p>
+            </a>
+            <a href="Obj3.html" class="card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Objective 3</h3>
+                <p>Health</p>
+            </a>
+            <a href="Obj4.html" class="card">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>Objective 4</h3>
+                <p>Economic Empowerment</p>
+            </a>
+            <a href="Obj5.html" class="card">
+                <i class="fa-solid fa-user-shield" ></i>
+                <h3>Objective 5</h3>
+                <p>Social Protection</p>
+            </a>
+        </div>
+    </section>
+    <div style="text-align: center; margin: 20px 0;">
+        <hr style="border: 2.2px solid #666; width: 10%; margin: auto; border-radius: 2px;">
+    </div>
+
+    <section class="make-difference1">
+        <div class="card-container">
+            <a href="Obj6.html" class="card">
+                <i class="fa-solid fa-hand-holding-heart" ></i>
+                <h3>Objective 6</h3>
+                <p>Protection of Women from Violence</p>
+            </a>
+            <a href="Obj7.html" class="card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h3>Objective 7</h3>
+                <p>Women in Crisis Situations</p>
+            </a>
+            <a href="Obj8.html" class="card">
+                <i class="fa-solid fa-house-crack"></i>
+                <h3>Objective 8</h3>
+                <p>Women in Disasters</p>
+            </a>
+            <a href="Obj9.html" class="card">
+                <i class="fa-solid fa-dove"></i>
+                <h3>Objective 9</h3>
+                <p>Women in Armed Conflict</p>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

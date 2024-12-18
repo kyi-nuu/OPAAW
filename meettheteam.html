@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff; /* Clean, neutral background */
+            color: #800000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #800000;
+            padding: 15 20px !important;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            box-sizing: border-box;
+            border-bottom: 0.5px solid white;
+            z-index: 10;
+        }
+
+        nav .nav-center {
+            display: flex;
+            gap: 30px;
+            flex-grow: 2;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-family: 'Times New Roman', serif;
+            position: relative;
+            margin: 20px;
+        }
+
+        .nav-center a:hover::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: white;
+            bottom: -3px;
+            left: 50%; /* Start at the center of the parent */
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .home-icon a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .home-icon:hover a {
+            color:#a64d4d;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+
+        .contact-button a {
+            background-color: white;
+            color: #800000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-button a:hover {
+            background-color: #a64d4d;
+            color: #fff;
+        }
+        /* Team Section */
+        .team-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .team-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #800000;
+            font-family: 'Garamond',serif;
+        }
+
+        .team-description {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .team-text-container {
+            flex: 1;
+            max-width: 300px;
+            text-align: left;
+            margin-right: 20px;
+        }
+
+        .team-cards {
+            flex: 3;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        /* Team Cards */
+        .team-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px); /* Hover animation */
+        }
+
+        .team-card.featured {
+            transform: scale(1.05);
+            border: 2px solid #ffd700;
+        }
+
+        .team-image {
+            margin: 0 auto 15px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #800000;
+            font-family: 'Garamond',serif;
+        }
+
+        .team-position {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .team-text {
+            font-size: 12px;
+            color: #555;
+        }
+
+        
+
+        /* Star Icon for Featured Team Member */
+        .star-icon {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffd700;
+            color: white;
+            font-size: 14px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        /* Background Accents */
+        .background-accent {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #e3f2fd; /* Light Blue */
+            border-radius: 20px;
+            z-index: -1;
+            transform: rotate(15deg);
+        }
+
+        .accent-left {
+            top: 20px;
+            left: -40px;
+        }
+
+        .accent-right {
+            bottom: 20px;
+            right: -40px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #800000;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="home-icon">
+            <a href="index.html">⌂</a>
+        </div>
+        <div class="nav-center">
+            <a href="aboutus.html">The Advancement of Women Through OPAAW</a>
+            <a href="https://aiu.edu.my/aiu-social-business/">Social Business & Social Innovation</a>
+        </div>
+        <div class="contact-button">
+            <a href="getinvolved.html">Get Involved</a>
+        </div>
+    </nav>
+    <!-- Team Section -->
+    <section class="team-section">
+        <h1 class="team-title">OUR TEAM</h1>
+        <p class="team-description">Here is the amazing teamwork!</p>
+    
+        <div style="text-align: center; margin: 20px 0;">
+            <hr style="border: 2.2px solid #800000; width: 20%; margin: auto; border-radius: 2px;">
+        </div>
+    
+        <!-- Management Team Section -->
+        <div class="team-container">
+            <div class="team-text-container">
+                <h2 class="team-title">Management <br>Team</h2>
+                <p class="team-description">
+                    The Management Team plays a crucial role in overseeing the organization's vision, mission, and day-to-day operations.
+                </p>
+            </div>
+            <div class="team-cards">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://via.placeholder.com/80" alt="Lena Pearce">
+                    </div>
+                    <h2 class="team-name">Person 1</h2>
+                    <p class="team-position"><em>Management Team</em></p>
+                    <p class="team-text"></p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-card featured">
+                <div class="background-accent accent-right"></div>
+                    <div class="team-image">
+                        <img src="https://via.placeholder.com/80" alt="Sophia Bach">
+                    </div>
+                    <h2 class="team-name">Dr. Muath Khalil Amayreh</h2>
+                    <p class="team-position"><em>Advisor</em></p>
+                    <p class="team-text"></p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://via.placeholder.com/80" alt="Arielle Copper">
+                    </div>
+                    <h2 class="team-name">Person 3</h2>
+                    <p class="team-position"><em>Management Team</em></p>
+                    <p class="team-text"></p>
+                </div>
+            </div>
+        </div>
+    
+        <hr>
+
+        <!-- IT Support Team Section -->
+        <div class="team-container">
+            <div class="team-text-container">
+                <h2 class="team-title">IT Support Team</h2>
+                <p class="team-description">
+                    Our IT Support Team ensures that the technical systems run smoothly and provides timely assistance to all users.
+                </p>
+            </div>
+            <div class="team-cards">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://via.placeholder.com/80" alt="John Doe">
+                    </div>
+                    <h2 class="team-name">Fauziyya Abdullahi Ahmed</h2>
+                    <p class="team-position"><em>Web Developer</em></p>
+                    <p class="team-text"></p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-card featured">
+                    <div class="background-accent accent-right"></div>
+                    <div class="team-image">
+                        <img src="https://via.placeholder.com/80" alt="Jane Smith">
+                    </div>
+                    <h2 class="team-name">Kyi Nuu Phyu Sin</h2>
+                    <p class="team-position"><em>Web Developer</em></p>
+                    <p class="team-text"></p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://via.placeholder.com/80" alt="Alex Brown">
+                    </div>
+                    <h2 class="team-name">Person 3</h2>
+                    <p class="team-position"><em>IT Support</em></p>
+                    <p class="team-text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us" style="background-color: #f2e6e6; padding: 30px 0; margin-bottom: 0;border-bottom: 2.5px solid #800000;">
+        <div class="container" style="text-align: center; max-width: 1200px; margin: 0 auto;">
+          <h2 style="font-size: 1.5rem; margin: 10px; font-family: 'Garamond', serif; color:#800000; margin-bottom: 30px;">Contact Us</h2>
+          
+          <!-- Contact Emails -->
+          <div style="margin-bottom: 20px;">
+            <p style="font-size: 1.1rem; margin-top: 10px; font-family: 'Times New Roman', serif; color:#800000">
+            <strong>Management Team:</strong>
+              <a href="mailto:management@example.com" style="color: #333; text-decoration: none;">
+                management@example.com
+              </a>
+            </p>
+            <p style="font-size: 1.1rem; font-family: 'Times New Roman', serif; color:#800000; margin-top: 10px;">
+              <strong>IT Support Team:</strong>
+              <a href="mailto:itsupport@example.com" style="color: #333; text-decoration: none;">
+                itsupport@example.com
+              </a>
+            </p>
+          </div>
+
+          <div style="margin-top: 40px;">
+            <a href="https://www.facebook.com/yourpage" target="_blank" style="margin: 0 15px; color: #4267B2; font-size: 2rem;">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/yourpage" target="_blank" style="margin: 0 15px; color: #1DA1F2; font-size: 2rem;">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/yourpage" target="_blank" style="margin: 0 15px; color: #E1306C; font-size: 2rem;">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/yourpage" target="_blank" style="margin: 0 15px; color: #0077B5; font-size: 2rem;">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+    </section>
+    
+</body>
+</html>

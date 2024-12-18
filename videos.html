@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | OPAAW</title>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #800000;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #800000;
+            padding: 15 20px !important;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            box-sizing: border-box;
+            border-bottom: 0.5px solid white;
+            z-index: 10;
+        }
+
+        nav .nav-center {
+            display: flex;
+            gap: 30px;
+            flex-grow: 2;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-family: 'Times New Roman', serif;
+            position: relative;
+            margin: 20px;
+        }
+
+        .nav-center a:hover::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: white;
+            bottom: -3px;
+            left: 50%; /* Start at the center of the parent */
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .home-icon a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .home-icon:hover a {
+            color:#a64d4d;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+
+        .contact-button a {
+            background-color: white;
+            color: #800000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-button a:hover {
+            background-color: #a64d4d;
+            color: #fff;
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 200px;
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 40px;
+            color: #800000;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin: 0;
+            line-height: 1.5;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Garamond', serif;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .video-section h1 {
+            font-size: 28px;
+            color: #800000;
+            margin-bottom: 20px;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px); /* Three boxes in a row */
+            max-width: 350px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .video:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .video img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .video h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .video a {
+            text-decoration: none;
+            color: #800000;
+        }
+
+        .video a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links li {
+            display: inline;
+        }
+
+        .footer {
+            background-color: #800000; 
+            color: #fff; 
+            padding: 10px 40px;
+            text-align: center; /* Centers the text */
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="home-icon">
+            <a href="index.html">⌂</a>
+        </div>
+        <div class="nav-center">
+            <a href="aboutus.html">The Advancement of Women Through OPAAW</a>
+            <a href="https://aiu.edu.my/aiu-social-business/">Social Business & Social Innovation</a>
+        </div>
+        <div class="contact-button">
+            <a href="meettheteam.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Let's explore <br> what is happening in the world!</h1>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video">
+                <a href="https://youtu.be/o95Mt48xVgM" target="_blank">
+                    <img src="https://img.youtube.com/vi/o95Mt48xVgM/hqdefault.jpg" alt="Video Thumbnail">
+                    <h2>ICIGE 2021: Assessing OPAAW through the Lens of Gender Equity</h2>
+                </a>
+            </div>
+            <!-- Video 2 -->
+            <div class="video">
+                <a href="https://youtu.be/9nML0_zS2Co" target="_blank">
+                    <img src="https://img.youtube.com/vi/LUaXU2g_RHY/hqdefault.jpg" alt="Video Thumbnail">
+                    <h2>OIC Summit addressed Israeli war on Gaza and Lebanon</h2>
+                </a>
+            </div>
+            <!-- Video 3 -->
+            <div class="video">
+                <a href="https://youtu.be/LUaXU2g_RHY?si=YArtJLwy9gitkyUb" target="_blank">
+                    <img src="https://img.youtube.com/vi/9nML0_zS2Co/hqdefault.jpg" alt="Video Thumbnail">
+                    <h2>Organisation of Islamic Cooperation calls for legal measures</h2>
+                </a>
+            </div>
+            <!-- Video 4 -->
+            <div class="video">
+                <a href="https://youtu.be/Y6pBJsdP53E?si=JjWg0diQ4iZZwlKH" target="_blank">
+                    <img src="https://img.youtube.com/vi/Y6pBJsdP53E/hqdefault.jpg" alt="Video Thumbnail">
+                    <h2>OIC's Formation and Objectives Explained</h2>
+                </a>
+            </div>
+            <!-- Video 5 -->
+            <div class="video">
+                <a href="https://youtu.be/4brSpSF9P5Y?si=YdaSe12cUx0sAmqa" target="_blank">
+                    <img src="https://img.youtube.com/vi/4brSpSF9P5Y/hqdefault.jpg" alt="Video Thumbnail">
+                    <h2>Educate Women and Savee the World | Dorsa Esmaeili | TEDxGEMSWellingtonAcademyAlKhail</h2>
+                </a>
+            </div>
+            <!-- Video 6 -->
+            <div class="video">
+                <a href="https://youtu.be/KEPAxHIcWG0?si=33-zo5Jp7uaJmxIN" target="_blank">
+                    <img src="https://img.youtube.com/vi/KEPAxHIcWG0/hqdefault.jpg" alt="Video Thumbnail">
+                    <h2>Do disasters discriminate? | UNDRR</h2>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

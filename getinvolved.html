@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+            font-size: larger;
+            font-weight: 525;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #800000;
+            padding: 15 20px !important;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            box-sizing: border-box;
+            border-bottom: 0.5px solid white;
+            z-index: 10;
+        }
+
+        nav .nav-center {
+            display: flex;
+            gap: 30px;
+            flex-grow: 2;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            position: relative;
+            margin: 20px;
+        }
+
+        .nav-center a:hover::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: white;
+            bottom: -3px;
+            left: 50%; /* Start at the center of the parent */
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .home-icon a {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+        }
+
+        .home-icon:hover a {
+            color:#a64d4d;
+            text-decoration: none;
+            font-size: 26px;
+        }
+
+
+        .contact-button a {
+            background-color: white;
+            color: #800000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-button a:hover {
+            background-color: #a64d4d;
+            color: #fff;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #800000;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: 'Garamond',serif;
+        }
+
+        header p {
+            font-size: 14px;
+            font-style: italic;
+            color:#ddd;
+        }
+
+        /* Main Content */
+        section {
+            padding: 50px 20px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #800000;
+            font-family: 'Garamond',serif;
+        }
+
+        .content p {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* How You Can Contribute Section */
+        .contribute-section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contribute-section h2 {
+            color: #800000;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Garamond', serif;
+        }
+
+        .contribute-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        .contribute-item:last-child {
+            border-bottom: none;
+        }
+
+        .contribute-number {
+            font-size: 1.5rem;
+            color: #800000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .contribute-text {
+            flex: 1;
+        }
+
+        .contribute-text h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #800000;
+            font-weight: bold;
+        }
+
+        .contribute-text p {
+            margin: 5px 0 0;
+            color: #555;
+        }
+
+
+        /* Form Section */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form h2{
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #800000;
+            font-family: 'Garamond',serif;
+
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #800000;
+        }
+
+        form button {
+            background-color: #800000;
+            color: #fff;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #a00000;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Section */
+        .footer-links li {
+            display: inline;
+        }
+
+        .footer {
+            background-color: #800000; 
+            color: #fff; 
+            padding: 10px 40px;
+            text-align: center; /* Centers the text */
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center !important;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #800000;
+            margin: 40px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="home-icon">
+            <a href="index.html">⌂</a>
+        </div>
+        <div class="contact-button">
+            <a href="meettheteam.html">Contact Us</a>
+        </div>
+    </nav>
+    
+    <!-- Header Section -->
+    <header>
+        <h1>Get Involved</h1>
+        <p>Be part of the change. Together, we can make a difference!</p>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+        <div class="content">
+            <h2>Why Get Involved?</h2>
+            <p>Join us in empowering women and promoting equality across all spheres of life. Whether through volunteering, donating, or sharing your ideas, your contribution will help make a lasting impact.</p>
+        </div>
+
+        <hr>
+        <!-- How You Can Contribute -->
+        <div class="contribute-section">
+            <h2>How You Can Contribute</h2>
+            
+            <!-- Contribution Item 1 -->
+            <div class="contribute-item">
+                <span class="contribute-number">1</span>
+                <div class="contribute-text">
+                    <h3>Share Ideas</h3>
+                    <p>Submit innovative ideas and solutions related to our objectives.</p>
+                </div>
+            </div>
+        
+            <!-- Contribution Item 2 -->
+            <div class="contribute-item">
+                <span class="contribute-number">2</span>
+                <div class="contribute-text">
+                    <h3>Provide Articles</h3>
+                    <p>Share links, research articles, or other resources that align with our goals.</p>
+                </div>
+            </div>
+        
+            <!-- Contribution Item 3 -->
+            <div class="contribute-item">
+                <span class="contribute-number">3</span>
+                <div class="contribute-text">
+                    <h3>Submit Videos</h3>
+                    <p>Provide video content or recommendations that can help inspire and educate.</p>
+                </div>
+            </div>
+        
+            <!-- Contribution Item 4 -->
+            <div class="contribute-item">
+                <span class="contribute-number">4</span>
+                <div class="contribute-text">
+                    <h3>Give Feedback</h3>
+                    <p>Share your thoughts and suggestions to help improve our initiatives.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal Line -->
+        <hr>
+
+        <!-- Contact Us -->
+        <form action="mailto:opaawebsite@example.com" method="POST" enctype="text/plain">
+            <h2>Contact Us</h2>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <textarea name="message" rows="5" placeholder="How would you like to get involved?" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <p>Alternatively, you can email us directly at:</p>
+            <a href="mailto:opaawebsite@example.com">opaawebsite@example.com</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

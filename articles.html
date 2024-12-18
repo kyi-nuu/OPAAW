@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | OPAAW</title>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #800000;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #800000;
+            padding: 15 20px !important;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            box-sizing: border-box;
+            border-bottom: 0.5px solid white;
+            z-index: 10;
+        }
+
+        nav .nav-center {
+            display: flex;
+            gap: 30px;
+            flex-grow: 2;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-family: 'Times New Roman', serif;
+            position: relative;
+            margin: 20px;
+        }
+
+        .nav-center a:hover::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: white;
+            bottom: -3px;
+            left: 50%; /* Start at the center of the parent */
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .home-icon a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .home-icon:hover a {
+            color:#a64d4d;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+
+        .contact-button a {
+            background-color: white;
+            color: #800000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-button a:hover {
+            background-color: #a64d4d;
+            color: #fff;
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 200px;
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 40px;
+            color: #800000;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin: 0;
+            line-height: 1.5;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Garamond', serif;
+        }
+
+        /* Articles Section */
+        .articles-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            margin-top: 0px;
+        }
+
+        .articles-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .article-card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            color: #800000;
+            margin-bottom: 10px;
+        }
+
+        .article-description {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .article-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #800000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .article-link:hover {
+            background-color: #d9b3b3;
+        }
+
+        /* Footer */
+               .footer-links li {
+            display: inline;
+        }
+
+        .footer {
+            background-color: #800000; 
+            color: #fff; 
+            padding: 10px 40px;
+            text-align: center; /* Centers the text */
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="home-icon">
+            <a href="index.html">⌂</a>
+        </div>
+        <div class="nav-center">
+            <a href="aboutus.html">The Advancement of Women Through OPAAW</a>
+            <a href="https://aiu.edu.my/aiu-social-business/">Social Business & Social Innovation</a>
+        </div>
+        <div class="contact-button">
+            <a href="meettheteam.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Explore articles and <br>resources that align with our mission.</h1>
+    </section>
+
+    <!-- Articles Section -->
+    <div class="articles-section">
+
+        <!-- Article 1 -->
+        <div class="article-card">
+            <h3 class="article-title">Research: Women Are Better Leaders During a Crisis</h3>
+            <h4>by Jack Zenger and Joseph Folkman</h4>
+            <p class="article-description">
+                There has been a lot said about how women have done a better job leading during the Covid-19 crisis than men. According to an analysis of 360-degree assessments conducted between March and June of this year, women were rated by those who work with them as more effective.
+            </p>
+            <a href="https://hbr.org/2020/12/research-women-are-better-leaders-during-a-crisis" target="_blank" class="article-link">Read More</a>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card">
+            <h3 class="article-title">War on women</h3>
+            <h4>Proportion of women killed in armed conflicts doubles in 2023</h4>
+            <p class="article-description">
+                UN paints dire picture of women in war: Despite rising conflict less than 10 per cent of negotiators in peace processes in 2023 were women.
+                    New York, 22 October - The effects of war and conflict on women and girls are worsening. 
+                 </p>
+            <a href="https://www.unwomen.org/en/news-stories/press-release/2024/10/war-on-women-women-killed-in-armed-conflicts-double-in-2023" target="_blank" class="article-link">Read More</a>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card">
+            <h3 class="article-title">Our strength is all we have left </h3>
+            <h4>Generations of Palestinian women and girls endure war and displacement</h4>
+
+            <p class="article-description">
+                This war has irreversibly changed my life. We have been displaced repeatedly, losing my education, my friends. The fear we live with is beyond words.”
+
+Those are the words of Leen Nahal, who at the age of 14 has endured five wars in Gaza and been repeatedly displaced.
+            </p>
+            <a href="https://www.unwomen.org/en/news-stories/feature-story/2024/11/our-strength-is-all-we-have-left-generations-of-palestinian-women-and-girls-endure-war-and-displacement" target="_blank" class="article-link">Read More</a>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="article-card">
+            <h3 class="article-title">Empowering women</h3>
+            <h4>The OIC’s Women’s Development Organization is ensuring that Muslim women are finally receiving their right to equality</h4>
+            <p class="article-description">
+                Out of the 1.6 billion Muslims in the world today, over half are women. However, the ever rising presence and prominence of women in Islamic countries hasn’t exactly resulted in a corresponding ascension of women’s rights. It is a fact that, on average, women continue to earn less than men for the same work, while nearly two thirds of the world’s 700 million illiterate adults are female.
+            </p>
+            <a href="https://www.theworldfolio.com/news/women-development-or/2370/" target="_blank" class="article-link">Read More</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 OPAAW | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
